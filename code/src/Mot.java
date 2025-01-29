@@ -1,5 +1,7 @@
 import java.util.List;
 
+import javax.swing.text.Position;
+
 public class Mot {
     private List<Lettre> lettres;
     private Position position; // Classe Position à définir (ligne, colonne)
