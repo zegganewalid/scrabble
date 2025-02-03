@@ -1,14 +1,21 @@
 import java.util.List;
 
-import javax.swing.text.Position;
-
+/**
+ * Représente un mot à placer sur le plateau de Scrabble.
+ */
 public class Mot {
-    private List<Lettre> lettres;
-    private Position position; // Classe Position à définir (ligne, colonne)
-    private Direction direction; // Enumération Direction (HORIZONTAL ou VERTICAL)
-    private boolean estImpose;
+    private List<Lettre> lettres; // Liste des lettres du mot
+    private Position position; // Position de départ du mot
+    private Direction direction; // Direction du mot (HORIZONTAL ou VERTICAL)
+    private boolean estImpose; // Indique si le mot est imposé (ex: mot de départ)
 
-    // Constructeur
+    /**
+     * Constructeur de la classe Mot
+     * @param lettres Liste des lettres qui composent le mot
+     * @param position Position de départ du mot
+     * @param direction Direction du mot (HORIZONTAL ou VERTICAL)
+     * @param estImpose Indique si le mot est imposé
+     */
     public Mot(List<Lettre> lettres, Position position, Direction direction, boolean estImpose) {
         this.lettres = lettres;
         this.position = position;
@@ -17,39 +24,43 @@ public class Mot {
     }
 
     // Getters et Setters
-    public List<Lettre> getLettres() {
-        return lettres;
+    public List<Lettre> getLettres() { 
+
+        return lettres; 
     }
 
-    public void setLettres(List<Lettre> lettres) {
-        this.lettres = lettres;
+    public void setLettres(List<Lettre> lettres) { 
+        this.lettres = lettres; 
     }
 
-    public Position getPosition() {
-        return position;
+    public Position getPosition() { 
+        return position; 
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void setPosition(Position position) { 
+        this.position = position; 
     }
 
-    public Direction getDirection() {
-        return direction;
+    public Direction getDirection() { 
+        return direction; 
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
+    public void setDirection(Direction direction) { 
+        this.direction = direction; 
     }
 
-    public boolean isEstImpose() {
-        return estImpose;
+    public boolean isEstImpose() { 
+        return estImpose; 
+    }
+    
+    public void setEstImpose(boolean estImpose) { 
+        this.estImpose = estImpose; 
     }
 
-    public void setEstImpose(boolean estImpose) {
-        this.estImpose = estImpose;
-    }
-
-    // Calcul du score du mot
+    /**
+     * Calcule le score du mot en additionnant la valeur des lettres.
+     * @return Score total du mot
+     */
     public int calculerScore() {
         int score = 0;
         for (Lettre lettre : lettres) {
@@ -58,30 +69,37 @@ public class Mot {
         return score;
     }
 
-    // Vérification de la validité du mot
+    /**
+     * Vérifie si le mot est valide en consultant un dictionnaire.
+     * @param dictionnaire Dictionnaire contenant les mots valides
+     * @param motsJoues Liste des mots déjà joués
+     * @return true si le mot est valide, sinon false
+     */
     public boolean verifierValidite(Dictionnaire dictionnaire, List<Mot> motsJoues) {
-        // Vérifier si le mot existe dans le dictionnaire
         StringBuilder motForme = new StringBuilder();
         for (Lettre lettre : lettres) {
             motForme.append(lettre.getCaractere());
         }
+        String motString = motForme.toString();
 
-        if (!dictionnaire.contientMot(motForme.toString())) {
-            return false; // Le mot n'est pas valide dans le dictionnaire
+        // Vérification dans le dictionnaire
+        if (!dictionnaire.contientMot(motString)) {
+            return false;
         }
 
-        // Vérifier si le mot n'a pas déjà été joué
+        // Vérification si le mot a déjà été joué
         for (Mot mot : motsJoues) {
-            if (motForme.toString().equals(mot.toString())) {
-                return false; // Le mot a déjà été joué
+            if (motString.equals(mot.toString())) {
+                return false;
             }
         }
-
-        // D'autres règles peuvent être ajoutées ici, selon le cahier des charges
-        return true; // Si toutes les vérifications passent, le mot est valide
+        return true;
     }
 
-    // Obtenir la longueur du mot
+    /**
+     * Obtient la longueur du mot.
+     * @return Longueur du mot
+     */
     public int getLongueur() {
         return lettres.size();
     }
