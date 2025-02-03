@@ -1,8 +1,7 @@
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Initialisation du plateau
+       /*  // Initialisation du plateau
         Plateau plateau = new Plateau();
         afficherPlateau(plateau);
         
@@ -48,5 +47,27 @@ public class Main {
                 c.setLettre(lettres.get(i));
             }
         }
+    }*/
+
+    // Création de l'objet Dictionnaire
+    Dictionnaire dictionnaire = new Dictionnaire();
+        
+    // Mot à rechercher
+    String motRecherche = "bonjour";
+    
+    // Vérification si le mot existe dans le fichier mots.txt
+    if (dictionnaire.chercherMotDansFichier(motRecherche)) {
+        System.out.println("Le mot '" + motRecherche + "' existe dans le fichier.");
+    } else {
+        System.out.println("Le mot '" + motRecherche + "' n'a pas été trouvé dans le fichier.");
     }
+
+    // Test avec un autre mot pour vérifier le fonctionnement
+    String motTest = "chattt";
+    if (dictionnaire.chercherMotDansFichier(motTest)) {
+        System.out.println("Le mot '" + motTest + "' existe dans le fichier.");
+    } else {
+        System.out.println("Le mot '" + motTest + "' n'a pas été trouvé dans le fichier.");
+    }
+}
 }
