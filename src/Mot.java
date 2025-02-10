@@ -1,3 +1,5 @@
+package src;
+
 import java.util.List;
 public class Mot {
     private List<Lettre> lettres;

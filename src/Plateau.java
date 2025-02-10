@@ -1,3 +1,4 @@
+package src;
 
 public class Plateau {
     private static final int TAILLE = 15;

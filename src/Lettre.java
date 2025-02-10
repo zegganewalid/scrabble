@@ -1,3 +1,5 @@
+package src;
+
 public class Lettre {
     private char caractere;
     private int valeur;
