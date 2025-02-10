@@ -3,7 +3,7 @@ public class Case {
     private int y;
     private Lettre lettre;
     private String typeBonus; // Peut être "MT", "MD", "LT", "LD", ou null pour aucune.
-    private boolean estOccupe; // Indique si une case est déjà occupée
+    private boolean estOccupe;
 
     public Case(int x, int y) {
         this.x = x;
@@ -13,7 +13,22 @@ public class Case {
         this.estOccupe = false;
     }
 
-    // Getters et setters
+    public Case(int x, int y, String typeBonus) {
+        this.x = x;
+        this.y = y;
+        this.lettre = null;
+        this.typeBonus = typeBonus;
+        this.estOccupe = false;
+    }
+
+    public Case(int x, int y, Lettre lettre, String typeBonus) {
+        this.x = x;
+        this.y = y;
+        this.lettre = lettre;
+        this.typeBonus = typeBonus;
+        this.estOccupe = true;
+    }
+
     public int getX() {
         return x;
     }
@@ -26,18 +41,14 @@ public class Case {
         return lettre;
     }
 
-    public void setLettre(Lettre lettre) { // (utilisé pour le test)
-        this.lettre = lettre;
-        this.estOccupe = (lettre != null); 
-    }
-     public void occuper(Lettre lettre) { // Permet d'occuper une case avec une lettre.(utilisé pour le plateau de jeu)
+    public void setLettre(Lettre lettre) {
         this.lettre = lettre;
         this.estOccupe = true; 
     }
 
     public void liberer() {
-        this.lettre = null;     // Retire la lettre de la case.
-        this.estOccupe = false; // Marque la case comme libre.
+        this.lettre = null;
+        this.estOccupe = false;
     }
 
     public String getTypeBonus() {
