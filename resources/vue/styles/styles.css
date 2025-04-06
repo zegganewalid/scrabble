@@ -1,0 +1,116 @@
+/* Styles généraux */
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f0f0f0;
+}
+
+/* Style du plateau */
+.grid-pane {
+    -fx-background-color: #dcdcdc;
+    -fx-padding: 10;
+    -fx-hgap: 2;
+    -fx-vgap: 2;
+}
+
+/* Style des cases du plateau */
+.case {
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+    -fx-background-color: #f5f5dc; /* beige */
+}
+
+.case-mt {
+    -fx-background-color: #ff6347; /* rouge pour mot triple */
+}
+
+.case-md {
+    -fx-background-color: #ffc0cb; /* rose pour mot double */
+}
+
+.case-lt {
+    -fx-background-color: #4169e1; /* bleu pour lettre triple */
+}
+
+.case-ld {
+    -fx-background-color: #87cefa; /* bleu clair pour lettre double */
+}
+
+.case-centre {
+    -fx-background-color: #ffd700; /* or pour la case centrale */
+}
+
+/* Style des lettres */
+.lettre {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.lettre-valeur {
+    -fx-font-size: 10px;
+    -fx-translate-x: 15;
+    -fx-translate-y: 10;
+}
+
+/* Style des lettres en main */
+.lettre-main {
+    -fx-background-color: #deb887; /* burlywood */
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+}
+
+.lettre-main-active {
+    -fx-background-color: #90ee90; /* light green */
+}
+
+/* Style des scores */
+.scores-box {
+    -fx-background-color: #fffacd; /* light yellow */
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-border-color: #000000;
+    -fx-border-width: 1px;
+}
+
+.score-titre {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.score-joueur {
+    -fx-font-size: 14px;
+}
+
+.score-joueur-actif {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #008000; /* green */
+}
+
+/* Style pour les boutons */
+.button {
+    -fx-background-color: #4682b4; /* steel blue */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15 8 15;
+}
+
+.button:hover {
+    -fx-background-color: #5f9ea0; /* cadet blue */
+}
+
+.button:pressed {
+    -fx-background-color: #4169e1; /* royal blue */
+}
+
+/* Style pour les champs de texte */
+.text-field {
+    -fx-padding: 5;
+    -fx-border-color: #a9a9a9;
+    -fx-border-width: 1px;
+    -fx-background-color: white;
+}
+
+/* Style pour les labels */
+.label {
+    -fx-padding: 5;
+}
